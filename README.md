@@ -15,7 +15,6 @@ The repository is intentionally narrow:
 
 ## Recommended Directory Structure
 
-```text1
 scholar/
   benchmark/
     built/                     # Generated benchmark files
