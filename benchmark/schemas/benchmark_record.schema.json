@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BenchmarkRecord",
+  "type": "object",
+  "required": [
+    "record_id",
+    "intent_id",
+    "harm_category",
+    "is_harmful",
+    "language_variant",
+    "prompt_text",
+    "source_type"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "intent_id": {
+      "type": "string"
+    },
+    "harm_category": {
+      "type": "string"
+    },
+    "is_harmful": {
+      "type": "boolean"
+    },
+    "language_variant": {
+      "type": "string"
+    },
+    "prompt_text": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string"
+    },
+    "benchmark_version": {
+      "type": "string"
+    },
+    "intent_label": {
+      "type": "string"
+    },
+    "seed_record_id": {
+      "type": "string"
+    }
+  }
+}
+

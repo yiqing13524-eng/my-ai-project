@@ -1,0 +1,41 @@
+{
+  "experiment_name": "small_mock",
+  "benchmark_path": "benchmark/built/lit_benchmark_v0_1_small.jsonl",
+  "benchmark_build": {
+    "harmful_limit": 8,
+    "harmless_limit": 4
+  },
+  "provider": {
+    "type": "mock",
+    "model_name": "mock-aligned-7b"
+  },
+  "judge": {
+    "type": "heuristic"
+  },
+  "defenses": [
+    {
+      "name": "none",
+      "type": "none"
+    },
+    {
+      "name": "strong_system_prompt",
+      "type": "strong_system_prompt",
+      "prompt_path": "prompts/defense_strong_system_prompt.txt"
+    },
+    {
+      "name": "normalize_input",
+      "type": "normalize_input"
+    },
+    {
+      "name": "keyword_filter",
+      "type": "keyword_filter"
+    },
+    {
+      "name": "refusal_router_stub",
+      "type": "refusal_router_stub"
+    }
+  ],
+  "output_dir": "outputs/runs/small_mock",
+  "human_review_sample_rate": 0.12
+}
+

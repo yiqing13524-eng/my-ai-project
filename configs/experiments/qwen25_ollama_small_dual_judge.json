@@ -1,0 +1,52 @@
+{
+  "experiment_name": "qwen25_ollama_small_dual_judge",
+  "benchmark_path": "benchmark/built/lit_benchmark_v0_1_small.jsonl",
+  "benchmark_build": {
+    "harmful_limit": 8,
+    "harmless_limit": 4
+  },
+  "provider": {
+    "type": "openai_compatible",
+    "model_name": "qwen25-local",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "api_key_env": "OPENAI_API_KEY",
+    "temperature": 0.0,
+    "max_tokens": 256,
+    "timeout_seconds": 180
+  },
+  "judge": {
+    "strategy": "dual_conservative",
+    "primary": {
+      "name": "heuristic_v2",
+      "type": "heuristic"
+    },
+    "secondary": {
+      "name": "llama31_local_judge",
+      "type": "openai_compatible",
+      "model_name": "llama31-local",
+      "base_url": "http://127.0.0.1:11434/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "temperature": 0.0,
+      "max_tokens": 200,
+      "timeout_seconds": 180,
+      "prompt_path": "prompts/judge_system_prompt_v2.txt"
+    }
+  },
+  "defenses": [
+    {
+      "name": "none",
+      "type": "none"
+    },
+    {
+      "name": "strong_system_prompt",
+      "type": "strong_system_prompt",
+      "prompt_path": "prompts/defense_strong_system_prompt.txt"
+    },
+    {
+      "name": "normalize_input",
+      "type": "normalize_input"
+    }
+  ],
+  "output_dir": "outputs/runs/qwen25_ollama_small_dual_judge",
+  "human_review_sample_rate": 0.12
+}

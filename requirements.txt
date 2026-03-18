@@ -1,0 +1,7 @@
+# The repository is standard-library-first.
+# No third-party package is required for the mock pipeline.
+#
+# Optional packages you may install later:
+# openai>=1.0.0      # only if you prefer the official SDK over urllib
+# pandas>=2.0.0      # optional for ad hoc analysis, not required
+

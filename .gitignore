@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+outputs/
+!outputs/.gitkeep
+benchmark/built/
+!benchmark/built/.gitkeep
+*.log
+
